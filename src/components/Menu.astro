@@ -1,0 +1,79 @@
+---
+import Card from './Card.astro';
+
+const categories: string[] = ['Pasta', 'Salads', 'Grill', 'Cake'];
+
+type MenuItem = {
+  id: number;
+  categories: string[];
+  name: string;
+  description: string;
+  price: string;
+  image: string;
+};
+
+const menuItems: MenuItem[] = [
+  { 
+    id: 1, 
+    categories: ['Salads', 'Grill'], 
+    name: 'Greek Salad', 
+    description: 'A fresh and tasty salad', 
+    price: '$7.50', 
+    image: 'https://via.placeholder.com/300x300.png?text=Greek+Salad' 
+  },
+  { 
+    id: 2, 
+    categories: ['Pasta'], 
+    name: 'Spaghetti Carbonara', 
+    description: 'Creamy pasta with bacon', 
+    price: '$9.50', 
+    image: 'https://via.placeholder.com/300x300.png?text=Spaghetti+Carbonara' 
+  },
+  { 
+    id: 3, 
+    categories: ['Grill'], 
+    name: 'Grilled Chicken', 
+    description: 'Perfectly grilled chicken', 
+    price: '$12.00', 
+    image: 'https://via.placeholder.com/300x300.png?text=Grilled+Chicken' 
+  },
+  { 
+    id: 4, 
+    categories: ['Cake'], 
+    name: 'Cheesecake', 
+    description: 'Rich and creamy', 
+    price: '$6.00', 
+    image: 'https://via.placeholder.com/300x300.png?text=Cheesecake' 
+  },
+];
+
+let selectedCategory: string = 'Salads';
+
+function handleFilter(category: string): void {
+  selectedCategory = category; // Actualiza la categoría seleccionada
+}
+---
+
+<div class="container mx-auto p-8">
+    <h2 class="text-2xl font-bold mb-6 text-center">You may like one of our dishes:</h2>
+    
+    <div class="flex justify-center space-x-4 mb-8">
+      {categories.map((category: string) => (
+        <button
+          type="button" 
+          class={`px-4 py-2 text-sm font-medium ${selectedCategory === category ? 'text-yellow-400' : 'text-white'} focus:outline-none`}
+          onClick={() => handleFilter(category)}
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {menuItems
+        .filter(item => item.categories.includes(selectedCategory))
+        .map((item) => (
+          <Card {...item} />
+        ))}
+    </div>
+  </div>
