@@ -1,0 +1,29 @@
+---
+const aboutImage = 'https://via.placeholder.com/150x150.png?text=LOGO';
+const backgroundTexture = 'https://via.placeholder.com/1920x1080.png?text=Texture+Background'; // Puedes cambiar esto por la textura que quieras
+---
+
+<section class="relative bg-cover bg-center py-16 px-4 md:px-8 lg:px-16" style={`background-image: url(${backgroundTexture})`}>
+  <div class="max-w-screen-xl mx-auto">
+    <div class="bg-gray-900 bg-opacity-80 rounded-lg shadow-lg p-8 flex flex-col lg:flex-row items-center gap-12">
+      <!-- Imagen -->
+      <div class="w-full lg:w-1/2 overflow-hidden rounded-lg shadow-lg">
+        <img src={aboutImage} alt="About Us Image" class="object-cover w-full h-full" />
+      </div>
+      
+      <!-- Texto -->
+      <div class="w-full lg:w-1/2 text-center lg:text-left text-white space-y-6">
+        <h2 class="text-4xl font-bold mb-4">About Us</h2>
+        <p class="text-lg">
+          The cozy Uptown restaurant is renowned for its traditional cuisine. We are delighted to welcome our guests and exceed all your expectations.
+        </p>
+        <p class="text-lg">
+          We are waiting for you every day, from 9:00 to 21:00.
+        </p>
+        <a href="#" class="inline-block text-yellow-400 font-semibold hover:underline">
+          Learn more &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
