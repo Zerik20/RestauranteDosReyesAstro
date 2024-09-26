@@ -1,18 +1,7 @@
 ---
-import Card from './Card.astro';
-
 const categories: string[] = ['Pasta', 'Salads', 'Grill', 'Cake'];
 
-type MenuItem = {
-  id: number;
-  categories: string[];
-  name: string;
-  description: string;
-  price: string;
-  image: string;
-};
-
-const menuItems: MenuItem[] = [
+const menuItems = [
   { 
     id: 1, 
     categories: ['Salads', 'Grill'], 
@@ -46,34 +35,74 @@ const menuItems: MenuItem[] = [
     image: 'https://via.placeholder.com/300x300.png?text=Cheesecake' 
   },
 ];
-
-let selectedCategory: string = 'Salads';
-
-function handleFilter(category: string): void {
-  selectedCategory = category; // Actualiza la categoría seleccionada
-}
 ---
 
+<!--
+  No agregues lógica de filtrado aquí. Vamos a manejar el estado con JS puro.
+  Remueve `client` directives y agrega un script al final para la lógica de JS.
+-->
 <div class="container mx-auto p-8">
-    <h2 class="text-2xl font-bold mb-6 text-center">You may like one of our dishes:</h2>
-    
-    <div class="flex justify-center space-x-4 mb-8">
-      {categories.map((category: string) => (
-        <button
-          type="button" 
-          class={`px-4 py-2 text-sm font-medium ${selectedCategory === category ? 'text-yellow-400' : 'text-white'} focus:outline-none`}
-          onClick={() => handleFilter(category)}
-        >
-          {category}
-        </button>
-      ))}
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {menuItems
-        .filter(item => item.categories.includes(selectedCategory))
-        .map((item) => (
-          <Card {...item} />
-        ))}
-    </div>
+  <h2 class="text-2xl font-bold mb-6 text-center">You may like one of our dishes:</h2>
+  
+  <!-- Selector de categorías -->
+  <div id="category-buttons" class="flex justify-center space-x-4 mb-8">
+    {categories.map(category => (
+      <button 
+        type="button" 
+        data-category={category} 
+        class="px-4 py-2 text-sm font-medium text-white focus:outline-none"
+      >
+        {category}
+      </button>
+    ))}
   </div>
+
+  <!-- Lista de elementos del menú -->
+  <div id="menu-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    {menuItems.map(item => (
+      <div 
+        class="menu-item" 
+        data-categories={item.categories.join(',')}
+        style="display: block;" 
+      >
+        <div class="border p-4 rounded-lg">
+          <img src={item.image} alt={item.name} class="w-full h-48 object-cover mb-4"/>
+          <h3 class="text-xl font-bold">{item.name}</h3>
+          <p>{item.description}</p>
+          <span class="block mt-2 font-semibold">{item.price}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<!-- Script de JavaScript puro -->
+<script>
+  // Obtener los botones de categoría y los elementos del menú
+  const categoryButtons = document.querySelectorAll('#category-buttons button');
+  const menuItems = document.querySelectorAll('#menu-items .menu-item');
+
+  // Función para manejar el filtrado por categoría
+  function handleFilter(category) {
+    // Actualiza la clase del botón seleccionado
+    categoryButtons.forEach(button => {
+      button.classList.toggle('text-yellow-400', button.dataset.category === category);
+    });
+
+    // Filtra los elementos del menú según la categoría seleccionada
+    menuItems.forEach(item => {
+      const itemCategories = item.dataset.categories.split(',');
+      item.style.display = itemCategories.includes(category) ? 'block' : 'none';
+    });
+  }
+
+  // Añadir evento de clic a cada botón de categoría
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      handleFilter(button.dataset.category);
+    });
+  });
+
+  // Establecer la categoría inicial
+  handleFilter('Salads');
+</script>
