@@ -1,45 +1,44 @@
-<section class="bg-black text-white relative">
-    <div class="container mx-auto px-6 py-16 pt-24 flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-6 lg:space-y-0 relative z-10">
-      <!-- Columna izquierda: Logo y Texto del Hero -->
-      <div class="lg:w-1/2 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
-        <!-- Logo del Restaurante (Placeholder) -->
-        <div class="w-32 h-32">
-          <img src="https://via.placeholder.com/150x150.png?text=LOGO" alt="Restaurant Logo" class="w-full h-full object-contain">
-        </div>
-  
-        <!-- Texto del Hero -->
-        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-          Check out our gourmet <span class="text-yellow-500">Menu</span>:
-        </h1>
-        <p class="flex flex-col lg:flex-row items-center lg:items-start space-y-2 lg:space-y-0 lg:space-x-4 text-gray-300">
-          <span class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h18M3 12h18m-9 8l3-3-3-3m0 0l-3 3m3-3v6" />
-            </svg>
-            9:00 - 20:00
-          </span>
-          <span class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h18M3 12h18m-9 8l3-3-3-3m0 0l-3 3m3-3v6" />
-            </svg>
-            Politkovskaia 14
-          </span>
-        </p>
-        <a href="/menu" class="bg-transparent border-2 border-white text-white px-4 py-2 rounded-md hover:bg-white hover:text-black transition duration-300">
-          Look menu
-        </a>
+<section class="relative text-white" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 50%, rgba(10, 6, 6, 0.5) 100%);">
+  <div class="container mx-auto px-6 py-16 pt-24 flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-6 lg:space-y-0 relative z-10">
+    <!-- Columna izquierda: Logo y Texto del Hero -->
+    <div class="lg:w-1/2 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
+      <!-- Logo del Restaurante (Placeholder) -->
+      <div class="w-full h-full">
+        <img src="/img/LogoCompleto.svg" alt="Restaurant Logo" class="w-full h-full object-contain object-center">
       </div>
-  
-      <!-- Columna derecha: Imagen del plato -->
-      <div class="lg:w-1/2 flex justify-center lg:justify-end">
-        <!-- Imagen con un tamaño de 500x500 píxeles, ajustada con Tailwind -->
-        <img src="https://via.placeholder.com/500x500.png?text=Delicious+Dish" alt="Delicious Dish" class="rounded-full shadow-lg w-full lg:w-3/4">
-      </div>
+
+      <!-- Texto del Hero -->
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+        Check out our gourmet <span class="text-yellow-500">Menu</span>:
+      </h1>
+      <p class="flex flex-col lg:flex-row items-center lg:items-start space-y-2 lg:space-y-0 lg:space-x-4 text-gray-300">
+        <span class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h18M3 12h18m-9 8l3-3-3-3m0 0l-3 3m3-3v6" />
+          </svg>
+          9:00 - 20:00
+        </span>
+        <span class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8h18M3 12h18m-9 8l3-3-3-3m0 0l-3 3m3-3v6" />
+          </svg>
+          Politkovskaia 14
+        </span>
+      </p>
+      <a href="/menu" class="bg-transparent border-2 border-white text-white px-4 py-2 rounded-md hover:bg-white hover:text-black transition duration-300">
+        Look menu
+      </a>
     </div>
-  
-    <!-- Fondo oscuro y textura -->
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-    <!-- Imagen de fondo con tamaño ajustado a 1920x1080 -->
-    <img src="https://via.placeholder.com/1920x1080.png?text=Background+Texture" alt="Background texture" class="absolute inset-0 w-full h-full object-cover opacity-25">
-  </section>
-  
+
+    <!-- Columna derecha: Imagen del plato -->
+    <div class="lg:w-1/2 flex justify-center lg:justify-end">
+      <!-- Imagen con un tamaño de 500x500 píxeles, ajustada con Tailwind -->
+      <img src="img/Hero/Platillo.png" alt="Delicious Dish" class=" w-5/6 lg:w-3/4">
+    </div>
+  </div>
+
+  <!-- Fondo oscuro y textura -->
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+  <!-- Imagen de fondo con textura tipo piedra -->
+  <img src="/img/Hero/Fondo.jpg" alt="Background texture" class="absolute inset-0 w-full h-full object-cover opacity-25">
+</section>

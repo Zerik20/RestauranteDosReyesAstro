@@ -37,10 +37,6 @@ const menuItems = [
 ];
 ---
 
-<!--
-  No agregues lógica de filtrado aquí. Vamos a manejar el estado con JS puro.
-  Remueve `client` directives y agrega un script al final para la lógica de JS.
--->
 <div class="container mx-auto p-8">
   <h2 class="text-2xl font-bold mb-6 text-center">You may like one of our dishes:</h2>
   
@@ -61,11 +57,11 @@ const menuItems = [
   <div id="menu-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
     {menuItems.map(item => (
       <div 
-        class="menu-item" 
+        class="menu-item bg-white border p-4 rounded-lg"
         data-categories={item.categories.join(',')}
         style="display: block;" 
       >
-        <div class="border p-4 rounded-lg">
+        <div>
           <img src={item.image} alt={item.name} class="w-full h-48 object-cover mb-4"/>
           <h3 class="text-xl font-bold">{item.name}</h3>
           <p>{item.description}</p>
@@ -76,30 +72,36 @@ const menuItems = [
   </div>
 </div>
 
-<!-- Script de JavaScript puro -->
+<!-- Código actualizado -->
 <script>
   // Obtener los botones de categoría y los elementos del menú
   const categoryButtons = document.querySelectorAll('#category-buttons button');
   const menuItems = document.querySelectorAll('#menu-items .menu-item');
 
-  // Función para manejar el filtrado por categoría
-  function handleFilter(category) {
+  /**
+   * Filtra los elementos del menú por categoría.
+   * @param {string} category - Categoría seleccionada.
+   */
+  function handleFilter(category: string) {
     // Actualiza la clase del botón seleccionado
-    categoryButtons.forEach(button => {
-      button.classList.toggle('text-yellow-400', button.dataset.category === category);
+    categoryButtons.forEach((button) => {
+      const buttonElement = button as HTMLButtonElement; // Conversión a HTMLButtonElement
+      buttonElement.classList.toggle('text-yellow-400', buttonElement.dataset.category === category);
     });
 
     // Filtra los elementos del menú según la categoría seleccionada
-    menuItems.forEach(item => {
-      const itemCategories = item.dataset.categories.split(',');
-      item.style.display = itemCategories.includes(category) ? 'block' : 'none';
+    menuItems.forEach((item) => {
+      const menuItemElement = item as HTMLElement; // Conversión a HTMLElement
+      const itemCategories = menuItemElement.dataset.categories?.split(',') || [];
+      menuItemElement.style.display = itemCategories.includes(category) ? 'block' : 'none';
     });
   }
 
   // Añadir evento de clic a cada botón de categoría
-  categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      handleFilter(button.dataset.category);
+  categoryButtons.forEach((button) => {
+    const buttonElement = button as HTMLButtonElement; // Conversión a HTMLButtonElement
+    buttonElement.addEventListener('click', () => {
+      handleFilter(buttonElement.dataset.category || '');
     });
   });
 
