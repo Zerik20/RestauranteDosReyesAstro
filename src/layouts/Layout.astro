@@ -20,6 +20,7 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -32,10 +33,35 @@ const { title } = Astro.props;
 			white 60%
 		);
 	}
+	
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: linear-gradient(
+			135deg,
+			#1a1a1a,
+			#2c2c2c 20%,
+			#333333 40%,
+			#1a1a1a 60%,
+			#000000 80%
+		);
+		background-attachment: fixed;
+		background-size: 400% 400%;
+		animation: gradientMove 20s ease infinite;
 	}
+
+	/* Animación para simular reflejos en el fondo */
+	@keyframes gradientMove {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
 	code {
 		font-family:
 			Menlo,

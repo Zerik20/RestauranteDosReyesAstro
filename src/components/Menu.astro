@@ -1,13 +1,13 @@
 ---
-const categories: string[] = ['Pasta', 'Salads', 'Grill', 'Cake'];
+const categories: string[] = ['Entradas', 'Especialidades de la tierra', 'Parrilladas', 'Especialidades del mar', 'Hamburgesas', 'Bebidas', 'Cervezas', 'Cocteleria', 'Postres', 'Aperitivos' ];
 
 const menuItems = [
   { 
     id: 1, 
-    categories: ['Salads', 'Grill'], 
-    name: 'Greek Salad', 
-    description: 'A fresh and tasty salad', 
-    price: '$7.50', 
+    categories: ['Entradas'], 
+    name: 'Papas a la francesa', 
+    description: '', 
+    price: '$110', 
     image: 'https://via.placeholder.com/300x300.png?text=Greek+Salad' 
   },
   { 
@@ -38,15 +38,15 @@ const menuItems = [
 ---
 
 <div class="container mx-auto p-8">
-  <h2 class="text-2xl font-bold mb-6 text-center">You may like one of our dishes:</h2>
+  <h2 class="text-2xl font-bold mb-6 text-center text-white">You may like one of our dishes:</h2>
   
   <!-- Selector de categorías -->
-  <div id="category-buttons" class="flex justify-center space-x-4 mb-8">
+  <div id="category-buttons" class="flex overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 space-x-4 mb-8 px-4 no-scrollbar">
     {categories.map(category => (
       <button 
         type="button" 
         data-category={category} 
-        class="px-4 py-2 text-sm font-medium text-white focus:outline-none"
+        class="px-4 py-2 text-sm font-medium text-white focus:outline-none whitespace-nowrap"
       >
         {category}
       </button>
@@ -72,11 +72,51 @@ const menuItems = [
   </div>
 </div>
 
-<!-- Código actualizado -->
+<!-- Estilos adicionales -->
+<style>
+  /* Contenedor de categorías con scroll horizontal habilitado */
+  #category-buttons {
+    display: flex; /* Asegura que todas las categorías estén en una línea */
+    overflow-x: scroll; /* Habilita el scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Para scroll suave en dispositivos móviles */
+    scroll-behavior: smooth; /* Transición suave al hacer scroll */
+  }
+
+  /* Scrollbar personalizado para Webkit (Chrome, Safari) */
+  #category-buttons::-webkit-scrollbar {
+    height: 6px; /* Tamaño del scrollbar horizontal */
+  }
+
+  #category-buttons::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4); /* Color de la barra de scroll */
+    border-radius: 10px;
+  }
+
+  #category-buttons::-webkit-scrollbar-track {
+    background: transparent; /* Fondo de la barra de scroll */
+  }
+
+  /* Scrollbar personalizado para Firefox */
+  #category-buttons {
+    scrollbar-width: thin; /* Tamaño de scrollbar fino */
+    scrollbar-color: rgba(255, 255, 255, 0.4) transparent; /* Color de scrollbar */
+  }
+
+  /* Ocultar el scrollbar si se prefiere */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Oculta la barra de scroll en Chrome, Safari */
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+</style>
+
 <script>
-  // Obtener los botones de categoría y los elementos del menú
-  const categoryButtons = document.querySelectorAll('#category-buttons button');
-  const menuItems = document.querySelectorAll('#menu-items .menu-item');
+  // Obtener los botones de categoría y los elementos del menú con tipos específicos
+  const categoryButtons = document.querySelectorAll<HTMLButtonElement>('#category-buttons button');
+  const menuItems = document.querySelectorAll<HTMLElement>('#menu-items .menu-item');
 
   /**
    * Filtra los elementos del menú por categoría.
@@ -85,26 +125,23 @@ const menuItems = [
   function handleFilter(category: string) {
     // Actualiza la clase del botón seleccionado
     categoryButtons.forEach((button) => {
-      const buttonElement = button as HTMLButtonElement; // Conversión a HTMLButtonElement
-      buttonElement.classList.toggle('text-yellow-400', buttonElement.dataset.category === category);
+      button.classList.toggle('text-yellow-400', button.dataset.category === category);
     });
 
     // Filtra los elementos del menú según la categoría seleccionada
     menuItems.forEach((item) => {
-      const menuItemElement = item as HTMLElement; // Conversión a HTMLElement
-      const itemCategories = menuItemElement.dataset.categories?.split(',') || [];
-      menuItemElement.style.display = itemCategories.includes(category) ? 'block' : 'none';
+      const itemCategories = item.dataset.categories?.split(',') || [];
+      item.style.display = itemCategories.includes(category) ? 'block' : 'none';
     });
   }
 
   // Añadir evento de clic a cada botón de categoría
   categoryButtons.forEach((button) => {
-    const buttonElement = button as HTMLButtonElement; // Conversión a HTMLButtonElement
-    buttonElement.addEventListener('click', () => {
-      handleFilter(buttonElement.dataset.category || '');
+    button.addEventListener('click', () => {
+      handleFilter(button.dataset.category || '');
     });
   });
 
   // Establecer la categoría inicial
-  handleFilter('Salads');
+  handleFilter('Entradas');
 </script>

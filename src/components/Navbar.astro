@@ -1,50 +1,95 @@
 <nav id="navbar" class="bg-transparent dark:bg-transparent fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-transparent transition-colors duration-300">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="/img/Logo.svg" class="h-8" alt="Flowbite Logo">
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Dos Reyes</span>
-      </a>
-      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <button type="button" class="text-white bg-transparent hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
-        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-        </button>
-      </div>
-      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-transparent rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">
-          <li>
-            <a href="#" class="block py-2 px-3 text-white bg-transparent rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-          </li>
-        </ul>
-      </div>
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/img/Logo.svg" class="h-8" alt="Flowbite Logo">
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Dos Reyes</span>
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      <button type="button" class="text-white bg-transparent hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+      <!-- Botón para menú móvil -->
+      <button id="mobile-menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
     </div>
-  </nav>
-  
-  <script>
-    window.addEventListener("scroll", function() {
-      var navbar = document.getElementById("navbar");
-      if (navbar) {  // Verificar si navbar existe
-        if (window.scrollY > 50) {
-          navbar.classList.add("bg-black", "dark:bg-black");
-          navbar.classList.remove("bg-transparent", "dark:bg-transparent");
-        } else {
-          navbar.classList.add("bg-transparent", "dark:bg-transparent");
-          navbar.classList.remove("bg-black", "dark:bg-black");
-        }
-      }
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-transparent rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-transparent md:dark:bg-transparent dark:border-gray-700">
+        <li>
+          <a href="#INICIO" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Inicio</a>
+        </li>
+        <li>
+          <a href="#NOSOTROS" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Nosotros</a>
+        </li>
+        <li>
+          <a href="#WHY" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Eligenos</a>
+        </li>
+        <li>
+          <a href="#CONTACTO" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Obtener todos los enlaces de navegación
+  const navLinks = document.querySelectorAll('#mobile-menu a');
+
+  // Función para mostrar y ocultar el menú en dispositivos móviles
+  const menuButton = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
-  </script>
-  
-  
+  } else {
+    console.error('No se pudo encontrar los elementos del menú móvil');
+  }
+
+  // Efecto de cambio de color en el navbar al hacer scroll
+  window.addEventListener("scroll", function () {
+    var navbar = document.getElementById("navbar");
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-black", "dark:bg-black");
+        navbar.classList.remove("bg-transparent", "dark:bg-transparent");
+      } else {
+        navbar.classList.add("bg-transparent", "dark:bg-transparent");
+        navbar.classList.remove("bg-black", "dark:bg-black");
+      }
+    }
+  });
+
+  // Al hacer clic en el enlace
+  navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      const target = event.currentTarget as HTMLAnchorElement;
+
+      // Guardar el id del enlace seleccionado en localStorage
+      localStorage.setItem('activeLink', target.getAttribute('href')!);
+
+      // Remover la clase 'text-blue-700' de todos los enlaces
+      navLinks.forEach(nav => {
+        nav.classList.remove('text-blue-700', 'dark:text-blue-500');
+        nav.classList.add('text-gray-900');
+      });
+
+      // Agregar la clase de seleccionado al enlace clickeado
+      target.classList.add('text-blue-700', 'dark:text-blue-500');
+    });
+  });
+
+  // Cargar el enlace activo desde localStorage al cargar la página
+  window.addEventListener('load', () => {
+    const activeLink = localStorage.getItem('activeLink');
+    if (activeLink) {
+      const activeNav = document.querySelector(`a[href="${activeLink}"]`);
+      if (activeNav) {
+        activeNav.classList.add('text-blue-700', 'dark:text-blue-500');
+      }
+    }
+  });
+</script>
