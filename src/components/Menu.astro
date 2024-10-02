@@ -1,5 +1,5 @@
 ---
-const categories: string[] = ['Entradas', 'Especialidades de la tierra', 'Parrilladas', 'Especialidades del mar', 'Hamburgesas', 'Bebidas', 'Cervezas', 'Cocteleria', 'Postres', 'Aperitivos' ];
+const categories: string[] = ['Entradas', 'Especialidades de la tierra', 'Parrilladas', 'Especialidades del mar', 'Hamburguesas', 'Bebidas', 'Cervezas', 'Cocteleria', 'Postres', 'Aperitivos' ];
 
 const menuItems = [
   { 
@@ -8,69 +8,627 @@ const menuItems = [
     name: 'Papas a la francesa', 
     description: '', 
     price: '$110', 
-    image: 'https://via.placeholder.com/300x300.png?text=Greek+Salad' 
+    image: 'https://via.placeholder.com/300x300.png?text=Papas+a+la+francesa' 
   },
   { 
     id: 2, 
-    categories: ['Pasta'], 
-    name: 'Spaghetti Carbonara', 
-    description: 'Creamy pasta with bacon', 
-    price: '$9.50', 
+    categories: ['Entradas'], 
+    name: 'Chorizo argentino', 
+    description: '', 
+    price: '$210', 
     image: 'https://via.placeholder.com/300x300.png?text=Spaghetti+Carbonara' 
   },
   { 
     id: 3, 
-    categories: ['Grill'], 
-    name: 'Grilled Chicken', 
-    description: 'Perfectly grilled chicken', 
-    price: '$12.00', 
-    image: 'https://via.placeholder.com/300x300.png?text=Grilled+Chicken' 
+    categories: ['Entradas'], 
+    name: 'Chistorra', 
+    description: '', 
+    price: '$210', 
+    image: 'https://via.placeholder.com/300x300.png?text=Chistorra' 
   },
   { 
     id: 4, 
-    categories: ['Cake'], 
-    name: 'Cheesecake', 
-    description: 'Rich and creamy', 
-    price: '$6.00', 
-    image: 'https://via.placeholder.com/300x300.png?text=Cheesecake' 
+    categories: ['Entradas'], 
+    name: 'Salchicha para asar', 
+    description: '', 
+    price: '$190', 
+    image: 'https://via.placeholder.com/300x300.png?text=Salchicha+para+asar' 
+  },
+  { 
+    id: 5, 
+    categories: ['Entradas'], 
+    name: 'Guacamole', 
+    description: '', 
+    price: '$130', 
+    image: 'https://via.placeholder.com/300x300.png?text=Guacamole' 
+  },
+  { 
+    id: 6, 
+    categories: ['Entradas'], 
+    name: 'Queso fundido', 
+    description: '', 
+    price: '$125', 
+    image: 'https://via.placeholder.com/300x300.png?text=Queso+fundido' 
+  },
+  { 
+    id: 7, 
+    categories: ['Entradas'], 
+    name: 'Queso f. combinado', 
+    description: 'Chorizo o champiñones', 
+    price: '$155', 
+    image: 'https://via.placeholder.com/300x300.png?text=Queso+f.+combinado' 
+  },
+  { 
+    id: 8, 
+    categories: ['Especialidades de la tierra'], 
+    name: 'Porter house 400 gr', 
+    description: 'Con guacamole, cebolla asada y chile toreado.', 
+    price: '$520', 
+    image: 'https://via.placeholder.com/300x300.png?text=Porter+house+400+gr' 
+  },
+  { 
+    id: 9, 
+    categories: ['Especialidades de la tierra'], 
+    name: 'Kansas city 350 gr', 
+    description: 'Mix de pimientos, pure de papa.', 
+    price: '$350', 
+    image: 'https://via.placeholder.com/300x300.png?text=Kansas+city+350+gr' 
+  },
+  { 
+    id: 10, 
+    categories: ['Especialidades de la tierra'], 
+    name: 'Arrachera 300 gr', 
+    description: 'Con guacamole, cebolla asada y chile toreado.', 
+    price: '$300', 
+    image: 'https://via.placeholder.com/300x300.png?text=Arrachera+300+gr' 
+  },
+  { 
+    id: 11, 
+    categories: ['Especialidades de la tierra'], 
+    name: 'Rib eye 300 gr', 
+    description: 'Con pure de papa y verduras asadas.', 
+    price: '$390', 
+    image: 'https://via.placeholder.com/300x300.png?text=Rib+eye+300+gr' 
+  },
+  { 
+    id: 12, 
+    categories: ['Especialidades de la tierra'], 
+    name: 'Picaña 300 gr', 
+    description: 'Con pure de papa y verduras asadas.', 
+    price: '$390', 
+    image: 'https://via.placeholder.com/300x300.png?text=Picaña+300+gr' 
+  },
+  { 
+    id: 13, 
+    categories: ['Especialidades de la tierra'], 
+    name: 'Cowboy 350 gr', 
+    description: 'Con ensalada y pure de papas.', 
+    price: '$430', 
+    image: 'https://via.placeholder.com/300x300.png?text=Cowboy+350+gr' 
+  },
+  { 
+    id: 14, 
+    categories: ['Especialidades de la tierra'], 
+    name: 'Churrasco 350 gr', 
+    description: 'Guacamole, cebollas asadas y chile toreado.', 
+    price: '$350', 
+    image: 'https://via.placeholder.com/300x300.png?text=Churrasco+350+gr' 
+  },
+  { 
+    id: 15, 
+    categories: ['Especialidades de la tierra'], 
+    name: 'Top sirloin 300 gr', 
+    description: 'Pure de papas y verduras asadas.', 
+    price: '$295', 
+    image: 'https://via.placeholder.com/300x300.png?text=Top+sirloin+300+gr' 
+  },
+  { 
+    id: 16, 
+    categories: ['Especialidades de la tierra'], 
+    name: 'New York 350 gr', 
+    description: 'Papas a la francesa y ensalada.', 
+    price: '$366', 
+    image: 'https://via.placeholder.com/300x300.png?text=New+York+350+gr' 
+  },
+  { 
+    id: 16, 
+    categories: ['Parrilladas'], 
+    name: 'Parrillada 2 reyes', 
+    description: '2 a 3 perosnas\n200 gr de arrachera\n200 gr de New York\n200 gr Top Sirloin\nSalchicha para asar\nChistorra\nQueso fundido',
+    price: '$1190', 
+    image: 'https://via.placeholder.com/300x300.png?text=New+York+350+gr' 
+  },
+  { 
+    id: 17, 
+    categories: ['Parrilladas'], 
+    name: 'Parrillada de reyes', 
+    description: '4 a 6 personas\n300 gr de Rib-eye\n300 gr de Carne asada\n300 gr de Churrasco\nSalchicha para asar\nChorizo argentino\nQueso fundido',
+    price: '$1450', 
+    image: 'https://via.placeholder.com/300x300.png?text=Parrillada+de+reyes' 
+  },
+  { 
+    id: 18, 
+    categories: ['Especialidades del mar'], 
+    name: 'Ceviche de pescado', 
+    description: '',
+    price: '$270', 
+    image: 'https://via.placeholder.com/300x300.png?text=Ceviche+de+pescado' 
+  },
+  { 
+    id: 19, 
+    categories: ['Especialidades del mar'], 
+    name: 'Ceviche de camaron', 
+    description: '',
+    price: '$300', 
+    image: 'https://via.placeholder.com/300x300.png?text=Ceviche+de+camaron' 
+  },
+  { 
+    id: 20, 
+    categories: ['Especialidades del mar'], 
+    name: 'Ceviche campechano', 
+    description: '',
+    price: '$320', 
+    image: 'https://via.placeholder.com/300x300.png?text=Ceviche+campechano' 
+  },
+  { 
+    id: 21, 
+    categories: ['Especialidades del mar'], 
+    name: 'Chicharron de pescado', 
+    description: '',
+    price: '$200', 
+    image: 'https://via.placeholder.com/300x300.png?text=Chicharron+de+pescado' 
+  },
+  { 
+    id: 22, 
+    categories: ['Especialidades del mar'], 
+    name: 'Tiradito de atún', 
+    description: '',
+    price: '$220', 
+    image: 'https://via.placeholder.com/300x300.png?text=Tiradito+de+atún' 
+  },
+  { 
+    id: 23, 
+    categories: ['Especialidades del mar'], 
+    name: 'Aguachile rojo', 
+    description: '',
+    price: '$290', 
+    image: 'https://via.placeholder.com/300x300.png?text=Aguachile+rojo' 
+  },
+  { 
+    id: 24, 
+    categories: ['Especialidades del mar'], 
+    name: 'Aguachile verde', 
+    description: '',
+    price: '$290', 
+    image: 'https://via.placeholder.com/300x300.png?text=Aguachile+verde' 
+  },
+  { 
+    id: 25, 
+    categories: ['Especialidades del mar'], 
+    name: 'Pulpo a la parrilla', 
+    description: '',
+    price: '$350', 
+    image: 'https://via.placeholder.com/300x300.png?text=Pulpo+a+la+parrilla' 
+  },
+  { 
+    id: 26, 
+    categories: ['Especialidades del mar'], 
+    name: 'Pulpo a la mantequilla', 
+    description: '',
+    price: '$330', 
+    image: 'https://via.placeholder.com/300x300.png?text=Pulpo+a+la+mantequilla' 
+  },
+  { 
+    id: 27, 
+    categories: ['Especialidades del mar'], 
+    name: 'Pulpo al ajillo', 
+    description: '',
+    price: '$360', 
+    image: 'https://via.placeholder.com/300x300.png?text=Pulpo+al+ajillo' 
+  },
+  { 
+    id: 28, 
+    categories: ['Especialidades del mar'], 
+    name: 'Pulpo zarandeado', 
+    description: '',
+    price: '$398', 
+    image: 'https://via.placeholder.com/300x300.png?text=Pulpo+zarandeado' 
+  },
+  { 
+    id: 29, 
+    categories: ['Especialidades del mar'], 
+    name: 'Camarones al ajillo', 
+    description: '',
+    price: '$260', 
+    image: 'https://via.placeholder.com/300x300.png?text=Camarones+ajillo' 
+  },
+  { 
+    id: 30, 
+    categories: ['Especialidades del mar'], 
+    name: 'Camarones empanizados', 
+    description: '',
+    price: '$250', 
+    image: 'https://via.placeholder.com/300x300.png?text=Camarones+empanizados' 
+  },
+  { 
+    id: 31, 
+    categories: ['Especialidades del mar'], 
+    name: 'Camarones a la plancha', 
+    description: '',
+    price: '$250', 
+    image: 'https://via.placeholder.com/300x300.png?text=Camarones+a+la+plancha' 
+  },
+  { 
+    id: 32, 
+    categories: ['Especialidades del mar'], 
+    name: 'Camarones al coco', 
+    description: '',
+    price: '$250', 
+    image: 'https://via.placeholder.com/300x300.png?text=Camarones+al+coco' 
+  },
+  { 
+    id: 33, 
+    categories: ['Especialidades del mar'], 
+    name: 'Pescado al gratin', 
+    description: '',
+    price: '$165', 
+    image: 'https://via.placeholder.com/300x300.png?text=Pescado+al+gratin' 
+  },
+  { 
+    id: 34, 
+    categories: ['Especialidades del mar'], 
+    name: 'Pescado zarandeado', 
+    description: '',
+    price: '$165', 
+    image: 'https://via.placeholder.com/300x300.png?text=Pescado+zarandeado' 
+  },
+  { 
+    id: 35, 
+    categories: ['Especialidades del mar'], 
+    name: 'Pescado empanizado', 
+    description: '',
+    price: '$165', 
+    image: 'https://via.placeholder.com/300x300.png?text=Pescado+empanizado' 
+  },
+  { 
+    id: 36, 
+    categories: ['Especialidades del mar'], 
+    name: 'Pescado empapelado', 
+    description: '',
+    price: '$200', 
+    image: 'https://via.placeholder.com/300x300.png?text=Pescado+empapelado' 
+  },
+  { 
+    id: 37, 
+    categories: ['Hamburguesas'], 
+    name: 'Hamburguesa clásica', 
+    description: '200 gr de carne de res, acompañada de jitomate, lechuga, cebolla morada, aguacate y queso amarillo.',
+    price: '$225', 
+    image: 'https://via.placeholder.com/300x300.png?text=Hamburguesa+clasica' 
+  },
+  { 
+    id: 38, 
+    categories: ['Hamburguesas'], 
+    name: 'Hamburguesa 2 reyes', 
+    description: '200 gr de carne de res, acompañada de huevo estrellado, tocino. jitomate, lechuga, cebolla morada, y queso amarillo.',
+    price: '$280', 
+    image: 'https://via.placeholder.com/300x300.png?text=Hamburguesa+2+reyes' 
+  },
+  { 
+    id: 39, 
+    categories: ['Bebidas'], 
+    name: 'Agua embotellada', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Agua+embotellada' 
+  },
+  { 
+    id: 40, 
+    categories: ['Bebidas'], 
+    name: 'Refresco 355 ml', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Refresco+355+ml' 
+  },
+  { 
+    id: 41, 
+    categories: ['Bebidas'], 
+    name: 'Agua mineral', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Agua+mineral' 
+  },
+  { 
+    id: 42, 
+    categories: ['Bebidas'], 
+    name: 'Jarra de clericot', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Jarra+de+clericot' 
+  },
+  { 
+    id: 43, 
+    categories: ['Bebidas'], 
+    name: 'Copa de clericot', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Copa+de+clericot' 
+  },
+  { 
+    id: 44, 
+    categories: ['Bebidas'], 
+    name: 'Limonada', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Limonada' 
+  },
+  { 
+    id: 45, 
+    categories: ['Bebidas'], 
+    name: 'Boost', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Boost' 
+  },
+  { 
+    id: 46, 
+    categories: ['Bebidas'], 
+    name: 'Capuccino', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Capuccino' 
+  },
+  { 
+    id: 47, 
+    categories: ['Bebidas'], 
+    name: 'Café americano', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Café+americano' 
+  },
+  { 
+    id: 48, 
+    categories: ['Cervezas'], 
+    name: 'Corona', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Corona' 
+  },
+  { 
+    id: 49, 
+    categories: ['Cervezas'], 
+    name: 'Victoria', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Victoria' 
+  },
+  { 
+    id: 50, 
+    categories: ['Cervezas'], 
+    name: 'XX Lager', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=XX+Lager' 
+  },
+  { 
+    id: 51, 
+    categories: ['Cervezas'], 
+    name: 'XX Ambar', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=XX+Ambar' 
+  },
+  { 
+    id: 52, 
+    categories: ['Cervezas'], 
+    name: 'Bohemia', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Bohemia' 
+  },
+  { 
+    id: 53, 
+    categories: ['Cervezas'], 
+    name: 'Heineken', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Heineken' 
+  },
+  { 
+    id: 54, 
+    categories: ['Cervezas'], 
+    name: 'Amster Ultra', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Amster+Ultra' 
+  },
+  { 
+    id: 55, 
+    categories: ['Cervezas'], 
+    name: 'Michelada clásica', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Michelada+clásica' 
+  },
+  { 
+    id: 56, 
+    categories: ['Cervezas'], 
+    name: 'Michelada Clamato', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Michelada+clamato' 
+  },
+  { 
+    id: 57, 
+    categories: ['Cocteleria'], 
+    name: 'Piña colada', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Piña+colada' 
+  },
+  { 
+    id: 58, 
+    categories: ['Cocteleria'], 
+    name: 'Mojito cubano', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Mojito+cubano' 
+  },
+  { 
+    id: 58, 
+    categories: ['Cocteleria'], 
+    name: 'Mojito Fresa', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Mojito+Fresa' 
+  },
+  { 
+    id: 59, 
+    categories: ['Cocteleria'], 
+    name: 'Tequila sunrise', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Tequila+sunrise' 
+  },
+  { 
+    id: 60, 
+    categories: ['Cocteleria'], 
+    name: 'Daiquiri frozen de fresa', 
+    description: '',
+    price: '', 
+    image: 'https://via.placeholder.com/300x300.png?text=Daiquiri+frozen+de+fresa' 
+  },
+  { 
+    id: 61, 
+    categories: ['Postres'], 
+    name: 'Flan napolitano', 
+    description: '',
+    price: '$85', 
+    image: 'https://via.placeholder.com/300x300.png?text=Daiquiri+frozen+de+fresa' 
+  },
+  { 
+    id: 62, 
+    categories: ['Postres'], 
+    name: 'Fried oreo', 
+    description: 'Oreos fritas acompañadas de helado de vainilla.',
+    price: '$95', 
+    image: 'https://via.placeholder.com/300x300.png?text=Fried+oreo' 
+  },
+  { 
+    id: 63, 
+    categories: ['Aperitivos'], 
+    name: 'Vermouth blanco sperone', 
+    description: '',
+    price: '$80', 
+    image: 'https://via.placeholder.com/300x300.png?text=Vermouth+blanco+sperone' 
+  },
+  { 
+    id: 64, 
+    categories: ['Aperitivos'], 
+    name: 'Vermouth rosso sperone', 
+    description: '',
+    price: '$80', 
+    image: 'https://via.placeholder.com/300x300.png?text=Vermouth+rosso+sperone' 
+  },
+  { 
+    id: 65, 
+    categories: ['Aperitivos'], 
+    name: 'Royal oporto', 
+    description: '',
+    price: '$85', 
+    image: 'https://via.placeholder.com/300x300.png?text=Royal+oporto' 
   },
 ];
 ---
 
-<div class="container mx-auto p-8">
-  <h2 class="text-2xl font-bold mb-6 text-center text-white">You may like one of our dishes:</h2>
-  
-  <!-- Selector de categorías -->
-  <div id="category-buttons" class="flex overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 space-x-4 mb-8 px-4 no-scrollbar">
-    {categories.map(category => (
-      <button 
-        type="button" 
-        data-category={category} 
-        class="px-4 py-2 text-sm font-medium text-white focus:outline-none whitespace-nowrap"
-      >
-        {category}
-      </button>
-    ))}
-  </div>
-
-  <!-- Lista de elementos del menú -->
-  <div id="menu-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-    {menuItems.map(item => (
-      <div 
-        class="menu-item bg-white border p-4 rounded-lg"
-        data-categories={item.categories.join(',')}
-        style="display: block;" 
-      >
-        <div>
-          <img src={item.image} alt={item.name} class="w-full h-48 object-cover mb-4"/>
-          <h3 class="text-xl font-bold">{item.name}</h3>
-          <p>{item.description}</p>
-          <span class="block mt-2 font-semibold">{item.price}</span>
-        </div>
+<section id="MENU">
+  <div class="container mx-auto p-8">
+    <h2 class="text-2xl font-bold mb-6 text-center text-white">You may like one of our dishes:</h2>
+    
+    <!-- Contenedor adicional para centrar en modo escritorio -->
+    <div class="w-full flex justify-center md:justify-center lg:justify-center">
+      <!-- Selector de categorías -->
+      <div id="category-buttons" class="flex justify-start md:justify-center lg:justify-center overflow-x-auto space-x-4 mb-8 px-4 no-scrollbar">
+        {categories.map((category) => (
+          <button 
+            type="button" 
+            data-category={category} 
+            class="px-4 py-2 text-sm font-medium text-white focus:outline-none whitespace-nowrap"
+          >
+            {category}
+          </button>
+        ))}
       </div>
-    ))}
+    </div>
+  
+    <!-- Lista de elementos del menú -->
+    <div id="menu-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {menuItems.map((item) => (
+        <div 
+          class="menu-item bg-white border p-4 rounded-lg"
+          data-categories={item.categories.join(',')}
+          style="display: block;" 
+        >
+          <div>
+            <img src={item.image} alt={item.name} class="w-full h-48 object-cover mb-4"/>
+            <h3 class="text-xl font-bold">{item.name}</h3>
+            
+            {/* Renderiza cada línea por separado */}
+            <p>
+              {item.description.split('\n').map((line) => (
+                <span>{line}<br /></span>
+              ))}
+            </p>
+      
+            <span class="block mt-2 font-semibold">{item.price}</span>
+          </div>
+        </div>
+      ))}       
+    </div>
   </div>
-</div>
+</section>
+
+
+
+<script>
+  // Obtener los botones de categoría y los elementos del menú con tipos específicos
+  const categoryButtons = document.querySelectorAll<HTMLButtonElement>('#category-buttons button');
+  const menuItems = document.querySelectorAll<HTMLElement>('#menu-items .menu-item');
+
+  /**
+   * Filtra los elementos del menú por categoría.
+   * @param {string} category - Categoría seleccionada.
+   */
+  function handleFilter(category: string) {
+    // Actualiza la clase del botón seleccionado
+    categoryButtons.forEach((button) => {
+      button.classList.toggle('text-yellow-400', button.dataset.category === category);
+    });
+
+    // Filtra los elementos del menú según la categoría seleccionada
+    menuItems.forEach((item) => {
+      const itemCategories = item.dataset.categories?.split(',') || [];
+      item.style.display = itemCategories.includes(category) ? 'block' : 'none';
+    });
+
+    // Realizar scroll automático al contenedor de categorías
+    const activeButton = Array.from(categoryButtons).find(button => button.dataset.category === category);
+    if (activeButton) {
+      // Desplaza horizontalmente el contenedor para centrar el botón seleccionado
+      activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+
+  // Añadir evento de clic a cada botón de categoría
+  categoryButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      handleFilter(button.dataset.category || '');
+    });
+  });
+
+  // Establecer la categoría inicial
+  handleFilter('Entradas');
+</script>
 
 <!-- Estilos adicionales -->
 <style>
@@ -112,36 +670,3 @@ const menuItems = [
     scrollbar-width: none;  /* Firefox */
   }
 </style>
-
-<script>
-  // Obtener los botones de categoría y los elementos del menú con tipos específicos
-  const categoryButtons = document.querySelectorAll<HTMLButtonElement>('#category-buttons button');
-  const menuItems = document.querySelectorAll<HTMLElement>('#menu-items .menu-item');
-
-  /**
-   * Filtra los elementos del menú por categoría.
-   * @param {string} category - Categoría seleccionada.
-   */
-  function handleFilter(category: string) {
-    // Actualiza la clase del botón seleccionado
-    categoryButtons.forEach((button) => {
-      button.classList.toggle('text-yellow-400', button.dataset.category === category);
-    });
-
-    // Filtra los elementos del menú según la categoría seleccionada
-    menuItems.forEach((item) => {
-      const itemCategories = item.dataset.categories?.split(',') || [];
-      item.style.display = itemCategories.includes(category) ? 'block' : 'none';
-    });
-  }
-
-  // Añadir evento de clic a cada botón de categoría
-  categoryButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      handleFilter(button.dataset.category || '');
-    });
-  });
-
-  // Establecer la categoría inicial
-  handleFilter('Entradas');
-</script>
