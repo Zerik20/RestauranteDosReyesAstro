@@ -1,0 +1,86 @@
+---
+// Este es un componente de Astro.
+---
+  <section id="CONTACTO" class="flex flex-col lg:flex-row justify-around items-center py-8 px-4 space-y-8 lg:space-y-0 lg:space-x-8 bg-black text-white">
+    <!-- Contenedor del Mapa -->
+    <div class="w-full lg:w-1/2">
+      <h2 class="text-2xl font-bold text-yellow-400 mb-4">Ubicación</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3721.3976762729194!2d-89.49836246585386!3d21.136566580888513!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f567166cf2b9e13%3A0xc83b63dda1101f2d!2sHacienda%20San%20Jos%C3%A9%20Chak%C3%A1n!5e0!3m2!1ses-419!2smx!4v1728570834668!5m2!1ses-419!2smx"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="rounded-lg shadow-lg"
+      ></iframe>
+    </div>
+
+    <!-- Contenedor de Contacto -->
+    <div class="w-full lg:w-1/2 space-y-4">
+      <!-- Número de WhatsApp -->
+      <div class="flex items-center space-x-2">
+        <span class="text-xl font-semibold text-yellow-400">📱 WhatsApp:</span>
+        <a
+          href="https://wa.me/529999999999"
+          class="text-lg font-medium text-white hover:text-yellow-400 transition duration-200"
+          target="_blank"
+        >
+          +52 999 999 9999
+        </a>
+      </div>
+
+      <!-- Formulario de Contacto -->
+      <form class="bg-gray-900 p-6 rounded-lg space-y-4 shadow-lg">
+        <h3 class="text-2xl font-semibold text-yellow-400">Contáctanos</h3>
+        
+        <!-- Nombre -->
+        <div>
+          <label for="name" class="block text-sm font-medium text-yellow-400 mb-1">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-700 focus:border-yellow-400 focus:outline-none"
+          />
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-yellow-400 mb-1">Correo Electrónico</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-700 focus:border-yellow-400 focus:outline-none"
+          />
+        </div>
+
+        <!-- Mensaje -->
+        <div>
+          <label for="message" class="block text-sm font-medium text-yellow-400 mb-1">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="4"
+            class="w-full px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-700 focus:border-yellow-400 focus:outline-none"
+          ></textarea>
+        </div>
+
+        <!-- Botón de Envío -->
+        <div class="flex justify-end">
+          <button
+            type="submit"
+            class="px-6 py-2 bg-yellow-400 text-black font-semibold rounded-md hover:bg-yellow-500 transition duration-200"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
